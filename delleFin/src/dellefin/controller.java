@@ -1,5 +1,5 @@
 package dellefin;
-
+// anden version https://github.com/mads-XD-kristensen/Delfin-opg
 import java.io.IOException;
 import static java.lang.System.exit;
 import java.sql.DriverManager;
@@ -88,7 +88,7 @@ public class controller {
         }
     }
 
-//    public void clearConsole() {
+//    public void clearConsole() { // Det er sådan her man laver WHITESPACE
 //        for (int i = 0; i <= 1; i++) {
 //            System.out.println("");
 //        }
