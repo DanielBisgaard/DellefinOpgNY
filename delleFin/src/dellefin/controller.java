@@ -27,7 +27,7 @@ public class controller {
 
                     break;
                 case 2:
-                    clearConsole();
+                   // clearConsole();
                     System.out.println("Oprette medlem tryk 1\nSlem medlem tryk 2\nRedigere alder tryk 3\nRedigere stam oplysninger tryk 4\nRedigere medlems passiv/aktiv status tryk 5\nGør medlem til konkurrent eller skift et medlems træner - tryk 6 \n");
                     int XD = myScan.nextInt();
                     switch (XD) {
@@ -88,11 +88,12 @@ public class controller {
         }
     }
 
-    public void clearConsole() {
-        for (int i = 0; i <= 25; i++) {
-            System.out.println("");
-        }
-    }
+//    public void clearConsole() {
+//        for (int i = 0; i <= 1; i++) {
+//            System.out.println("");
+//        }
+
+
 
     public void lavMedlem() throws SQLException {
 
@@ -396,7 +397,7 @@ public class controller {
 
             Connection conn = DataConnector.getConnection();
 
-            String sql = "select m.ID, m.stamOpl, m.alder, s.Stævne, s.medlem_id, s.tid, s.svømid,s.svømmedisciplin from medlem m, svømresultat s where s.Medlem_ID=m.id and alder < 2001 and s.Svømmedisciplin = \"crawl\" order by Tid asc limit 5;";
+            String sql = "select m.ID, m.stamOpl, m.alder, s.Stævne, s.medlem_id, s.tid, s.svømid,s.svømmedisciplin from medlem m, svømresultat s where s.Medlem_ID=m.id and alder < 2001 and s.Svømmedisciplin = ? order by Tid asc limit 5;";
 
             statement = conn.prepareStatement(sql);
 
@@ -432,7 +433,7 @@ public class controller {
 
             Connection conn = DataConnector.getConnection();
 
-            String sql = "select m.ID, m.stamOpl, m.alder, s.Stævne, s.medlem_id, s.tid, s.svømid,s.svømmedisciplin from medlem m, svømresultat s where s.Medlem_ID=m.id and alder > 2001 and s.Svømmedisciplin = \"crawl\" order by Tid asc limit 5;";
+            String sql = "select m.ID, m.stamOpl, m.alder, s.Stævne, s.medlem_id, s.tid, s.svømid,s.svømmedisciplin from medlem m, svømresultat s where s.Medlem_ID=m.id and alder > 2001 and s.Svømmedisciplin = ? order by Tid asc limit 5;";
 
             statement = conn.prepareStatement(sql);
 
